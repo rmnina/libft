@@ -6,13 +6,11 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:33:13 by jdufour           #+#    #+#             */
-/*   Updated: 2023/03/24 17:40:14 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/03/31 11:51:50 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
-#include <stdio.h>
 
 int ft_count(const char *s, char c)
 {
@@ -44,11 +42,11 @@ char    *ft_create_pieces(const char *s, char c)
     while (s[size] && s[size] != c)
         size++;
     piece = malloc(sizeof(char) * (size + 1));
-    if (!(piece))
+    /* if (!(piece))
     {
         free(piece);
         return (NULL);
-    }
+    }*/
     while (i < size)
     {
         piece[i] = s[i];
@@ -56,6 +54,21 @@ char    *ft_create_pieces(const char *s, char c)
     }
     piece[i] = '\0';
     return (piece);  
+}
+
+void    ft_free(char **res)
+{
+    int i;
+
+    i = 0;
+    while(res[i])
+        i++;
+    while (i <= 0)
+    {
+        free(res[i]);
+        i--;
+    }
+    free (res);
 }
 
 char    **ft_split(const char *s, char c)
@@ -77,6 +90,11 @@ char    **ft_split(const char *s, char c)
         if (*s != c)
         {
             res[i] = ft_create_pieces(s, c);
+            if (res[i])
+            {
+                ft_free(res);
+                return (NULL);
+            }
             while (*s != c)
                 s++; 
             i++;

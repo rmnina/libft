@@ -6,15 +6,18 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 20:14:00 by jdufour           #+#    #+#             */
-/*   Updated: 2023/03/24 17:39:31 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/03/31 11:37:01 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-#include <stdio.h>
 
-//typedef unsigned long size_t;
+#include <stdio.h>
+#include <ctype.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
 
 int ft_isalpha(char c);
 int ft_isdigit(char c);
@@ -34,6 +37,15 @@ char    *strchr(const char *str, int searchedChar);
 char    *strrchr(const char *str, int searchedChar);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
 int ft_atoi(const char *str);
-char    **ft_split(const char *s, char c)
+char    **ft_split(const char *s, char c);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putstr_fd(char *s, int fd);
+char	*ft_strdup(char *src, char *dest);
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+char	*ft_strjoin(const char *s1, const char *s2);
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
+char	*ft_substr(const char *s, unsigned int start, size_t len);
 
 #endif

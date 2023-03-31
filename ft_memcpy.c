@@ -6,12 +6,11 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 20:49:42 by jdufour           #+#    #+#             */
-/*   Updated: 2023/03/22 22:03:39 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/03/31 11:33:46 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 void    *ft_memcpy(void *dest, const void *src, size_t size)
 {
