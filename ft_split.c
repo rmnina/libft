@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:33:13 by jdufour           #+#    #+#             */
-/*   Updated: 2023/03/31 11:51:50 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/04/01 14:08:51 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,8 @@ char    *ft_create_pieces(const char *s, char c)
     while (s[size] && s[size] != c)
         size++;
     piece = malloc(sizeof(char) * (size + 1));
-    /* if (!(piece))
-    {
-        free(piece);
+    if (!(piece))
         return (NULL);
-    }*/
     while (i < size)
     {
         piece[i] = s[i];
@@ -63,7 +60,7 @@ void    ft_free(char **res)
     i = 0;
     while(res[i])
         i++;
-    while (i <= 0)
+    while (i >= 0 && res[i])
     {
         free(res[i]);
         i--;
@@ -79,18 +76,15 @@ char    **ft_split(const char *s, char c)
 
     i = 0;
     count = ft_count(s, c);
-    res = malloc(sizeof(char*) * (count + 1));
+    res = malloc(sizeof(char *) * (count + 1));
     if (!(res))
-    {
-        free(res);
         return (NULL);
-    }
     while (i < count)
     {
         if (*s != c)
         {
             res[i] = ft_create_pieces(s, c);
-            if (res[i])
+            if (!(res[i]))
             {
                 ft_free(res);
                 return (NULL);
@@ -103,6 +97,18 @@ char    **ft_split(const char *s, char c)
             while (*s == c)
                 s++;
     }
-    res[i] == NULL;
+    res[i] = NULL;
     return (res);
 }
+/*
+int main()
+{
+    char **res;
+    
+    res = ft_split("tripouille", ' ');
+    for (int i = 0; i < 1; i++)
+    {
+        printf("%s\n", res[i]);
+    }
+}
+*/
