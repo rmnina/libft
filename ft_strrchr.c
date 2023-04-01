@@ -6,22 +6,23 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 22:55:37 by jdufour           #+#    #+#             */
-/*   Updated: 2023/03/22 23:00:00 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/04/01 01:03:42 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *strrchr(const char *str, int searchedChar)
+char    *ft_strrchr(const char *str, int c)
 {
     int len;
+    unsigned char new_c;
     
     len = ft_strlen(str);
-    while (len > 0)
-    {
-        if (str[len] == searchedChar)
-            return &str[len];
+    new_c = (unsigned char)c;
+    while (len > 0 && str[len] != new_c)
         len--;
-    }
-    return (NULL);
+    if (str[len] == new_c)
+        return ((char *)str + len);
+    else
+        return (NULL);
 }

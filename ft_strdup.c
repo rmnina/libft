@@ -6,15 +6,16 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:35:08 by jdufour           #+#    #+#             */
-/*   Updated: 2023/03/31 11:35:09 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/04/01 01:13:15 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *src, char *dest)
+char	*ft_strdup(char *src)
 {
 	int	i;
+	char	*dest;
 	
 	i = 0;
 	dest = malloc(sizeof(char) * (ft_strlen(src) + 1));

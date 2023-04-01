@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:34:36 by jdufour           #+#    #+#             */
-/*   Updated: 2023/03/31 11:34:39 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/03/31 12:23:34 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);
-	write(fd, '\n', 1);
+	ft_putchar_fd('\n', fd);
 }

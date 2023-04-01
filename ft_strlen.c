@@ -6,13 +6,13 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 18:50:09 by jdufour           #+#    #+#             */
-/*   Updated: 2023/03/22 20:24:44 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/03/31 12:28:48 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strlen(char *str)
+int ft_strlen(const char *str)
 {
     int i;
     

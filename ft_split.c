@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 15:33:13 by jdufour           #+#    #+#             */
-/*   Updated: 2023/04/01 14:08:51 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/04/01 14:51:44 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,31 +71,25 @@ void    ft_free(char **res)
 char    **ft_split(const char *s, char c)
 {
     int i;
-    int count;
     char    **res;
 
     i = 0;
-    count = ft_count(s, c);
-    res = malloc(sizeof(char *) * (count + 1));
+    res = malloc(sizeof(char *) * ((ft_count(s, c)) + 1));
     if (!(res))
         return (NULL);
-    while (i < count)
+    while (*s)
     {
-        if (*s != c)
+        if (*s != c && *s)
         {
             res[i] = ft_create_pieces(s, c);
             if (!(res[i]))
-            {
                 ft_free(res);
-                return (NULL);
-            }
-            while (*s != c)
-                s++; 
             i++;
+            while (*s != c && *s)
+                s++; 
         }
-        if (*s == c)
-            while (*s == c)
-                s++;
+        while (*s == c && *s)
+            s++;
     }
     res[i] = NULL;
     return (res);

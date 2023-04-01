@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 22:27:32 by jdufour           #+#    #+#             */
-/*   Updated: 2023/03/22 22:35:13 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/04/01 01:07:04 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ size_t  ft_strlcat(char *dst, const char *src, size_t size)
 	src_len = ft_strlen(src);
 	if (size <= dst_len)
 		return (size + src_len);
-	while (src[i] != '\0' && dst_len < size - 1)
+	while (src[i] && dst_len < size - 1)
 	{
 		dst[dst_len] = src[i];
 		dst_len++;
+		i++;
 	}
 	dst[dst_len] = '\0';
-	return (src_len + dst_len);
+	return (src_len + (dst_len - i));
 }

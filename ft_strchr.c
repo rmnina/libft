@@ -6,19 +6,21 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 22:50:05 by jdufour           #+#    #+#             */
-/*   Updated: 2023/03/22 22:59:50 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/04/01 01:01:23 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *strchr(const char *str, int searchedChar)
+char    *ft_strchr(const char *str, int c)
 {
-    while (*str)
-    {
-        if (*str == searchedChar)
-            return (str);
+    unsigned char   new_c;
+
+    new_c = (unsigned char)c;
+    while (*str && *str != new_c)
         str++;
-    }
-    return (NULL);
+    if (*str == new_c)
+        return ((char *)str);
+    else
+        return (NULL);
 }

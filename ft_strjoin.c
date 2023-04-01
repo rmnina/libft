@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:35:31 by jdufour           #+#    #+#             */
-/*   Updated: 2023/03/31 11:35:33 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/04/01 11:14:33 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,20 @@ char	*ft_strcat(char *dest, const char *src)
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {
-	int	i;
 	int	size;
 	char	*cat;
 	
-	i = 0;
 	size = ft_strlen(s1) + ft_strlen(s2);
-	cat = malloc(sizeof(char) * (size + 1));
+	cat = ft_calloc(size + 1, sizeof(char));
 	if (!(cat))
 		return (NULL);
 	cat = ft_strcat(cat, s1);
 	cat = ft_strcat(cat, s2);
 	return (cat);
 }
+/*
+int	main()
+{
+	printf("%s\n", ft_strjoin("a", "nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn"));
+}
+*/

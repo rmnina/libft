@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 21:50:14 by jdufour           #+#    #+#             */
-/*   Updated: 2023/03/31 11:33:54 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/04/01 00:30:57 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void    *ft_memmove(void *dest, const void *src, size_t size)
     const char    *new_src;
 
     i = 0;
-    count = size;
+    count = size - 1;
     new_dest = dest;
     new_src = src;
-    while (i < size)
+    while (i < size && count + 1 > i)
     {
         if (new_dest > new_src)
         {
