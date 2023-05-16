@@ -6,27 +6,27 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 20:49:42 by jdufour           #+#    #+#             */
-/*   Updated: 2023/03/31 11:33:46 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/05/02 22:05:12 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memcpy(void *dest, const void *src, size_t size)
+void	*ft_memcpy(void *dest, const void *src, size_t size)
 {
-    size_t  i;
-    char    *new_dest;
-    const char    *new_src;
+	size_t		i;
+	char		*new_dest;
+	const char	*new_src;
 
-    i = 0;
-    new_dest = (char *)dest;
-    new_src = (const char *)src;
-    while (i < size)
-    {
-        new_dest[i] = new_src[i];
-        i++;
-    }
-    return (dest);
+	i = 0;
+	new_dest = (char *)dest;
+	new_src = (const char *)src;
+	while (i < size)
+	{
+		new_dest[i] = new_src[i];
+		i++;
+	}
+	return (dest);
 }
 /*
 int main()

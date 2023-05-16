@@ -6,7 +6,7 @@
 /*   By: jdufour <jdufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:35:43 by jdufour           #+#    #+#             */
-/*   Updated: 2023/04/01 01:37:30 by jdufour          ###   ########.fr       */
+/*   Updated: 2023/05/02 13:04:42 by jdufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
-	char	*map;
-	
+	char			*map;
+
 	i = 0;
 	map = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!(map))
