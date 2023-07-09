@@ -59,7 +59,7 @@ SRC_BONUS = ft_lstadd_front.c\
 
 OBJS = ${SRCS:.c=.o}
 
-OBJS_BONUS = $(SRC_BONUS:.c=.o)
+OBJS_BONUS = ${SRC_BONUS:.c=.o}
 
 HEADER = libft.h
 
@@ -75,9 +75,9 @@ ${NAME}: ${OBJS}
 	${CC} ${FLAGS} -c ${SRCS}
 	ar cr ${NAME} ${OBJS}
 
-bonus: $(OBJS_BONUS)
-	$(CC) $(CFLAGS) -c $(SRC_BONUS)
-	ar cr $(NAME) $(OBJS_BONUS)
+bonus: ${OBJS_BONUS}
+	${CC} ${FLAGS} -c ${SRC_BONUS}
+	ar cr ${NAME} ${OBJS_BONUS}
 
 clean: 
 	${RM} ${OBJS}
